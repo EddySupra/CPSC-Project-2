@@ -1,7 +1,5 @@
-4
-#include <bits/stdc++.h>
-    int
-    main()
+#include <iostream>
+int main()
 {
     // Get user input
     int n;
