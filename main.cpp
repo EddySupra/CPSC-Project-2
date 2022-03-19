@@ -1,28 +1,29 @@
 #include <iostream>
+int fib_series(int n);
+
 int main()
 {
     // Get user input
     int n;
-    std::cout << "Enter a number" << std::endl;
+    std::cout << "Enter the term of the fibonacci sequence you want" << std::endl;
     std::cin >> n;
+    //for loop to print out ever fibonacci number up to n
+    for (int i = 0; i <= n; i++)
+    {
+        std::cout << fib_series(i) << ", ";
+    }
 
-    int fib = 0;
-    int F1 = 0;
-    int F2 = 1;
-
+}
+int fib_series(int n)
+{
+    //if n = 1 or 0 just return n
     if (n <= 1)
     {
         return n;
     }
     else
+    // n-2 + n-1 = nth term
     {
-        std::cout << F1 << ", ";
-        for (int i = 1; i < n; i++)
-        {
-            std::cout << F2 << ", ";
-            int next = F1 + F2;
-            F1 = F2;
-            F2 = next;
-        }
+        return(fib_series(n - 2) + fib_series(n - 1));
     }
 }
