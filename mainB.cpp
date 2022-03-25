@@ -12,6 +12,13 @@ int main() {
     cout << "Enter a positive integer p." << endl;
     int p;
     cin >> p;
+        while(p < 0)
+        {
+          cout << "Input was float or negative please try again " << endl;
+          cout << "Enter a positive integer p." << endl;
+          cin >> p;
+        }  
+
     cout << "Enter the nth value of the Fibbonacci Sequence you want to compute" << endl;
     int n;
     cin >> n;
@@ -27,9 +34,13 @@ int main() {
     cout << endl;
 
     cout << "Fibonacci Sequence using Equation 5: " << endl << endl;
-    for(int i = 0; i < 20; ++i) {
+    for(int i = 0; i < n; ++i) {
         cout << "Term " << i + 1 << ": " << nextTermFibonnaci(i) << endl;
     }
+    cout << endl;
+    cout << endl;
+    cout << "F4 divided by F3 is " << nthTermFibbonacci(4) / nthTermFibbonacci(3) << endl;
+    cout << "F31 divided by F30 is " << nthTermFibbonacci(31) / nthTermFibbonacci(30) << endl;
 }
 
 double nthTermFibbonacci(int n) {
