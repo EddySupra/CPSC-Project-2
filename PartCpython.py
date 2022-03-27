@@ -8,10 +8,9 @@ def largest_sum(Vector):
     return Vector[b: e]
 
 
-
-
 Vect = []
 n = int(input("Enter number of elements : "))
+print("Enter element one by one")
 for i in range(0, n):
     elem = int(input())
     Vect.append(elem)

@@ -6,6 +6,8 @@ using namespace std;
 double nthTermFibbonacci(int n);
 double npFibbonacci(int p, int n);
 double nextTermFibonnaci(int n);
+bool CheckIfInt(int n);
+bool CheckIfFloat(float n);
 
 int main() {
 
@@ -27,14 +29,15 @@ int main() {
 
     cout << "Fibonacci Sequence using Equation 4: " << endl << endl;
 
-    for(int i = 1; i <= n; ++i){
+    /*for(int i = 1; i <= n; ++i){
         cout << "Term " << i << ": " << npFibbonacci(p, i) << endl;
-    }
+    }*/
+    cout << npFibbonacci(p, n);
     cout << endl;
     cout << endl;
 
     cout << "Fibonacci Sequence using Equation 5: " << endl << endl;
-    for(int i = 0; i < n; ++i) {
+    for(int i = 0; i < 20; ++i) {
         cout << "Term " << i + 1 << ": " << nextTermFibonnaci(i) << endl;
     }
     cout << endl;
@@ -60,4 +63,14 @@ double npFibbonacci(int p, int n) {
 
 double nextTermFibonnaci(int n) {
     return nthTermFibbonacci(n) * 1.61803;
+}
+
+bool CheckIfInt(int n)
+{
+    return true;
+}
+
+bool CheckIfFloat(float n)
+{
+    return true;
 }
