@@ -6,32 +6,20 @@ using namespace std;
 double nthTermFibbonacci(int n);
 double npFibbonacci(int p, int n);
 double nextTermFibonnaci(int n);
-bool CheckIfInt(int n);
-bool CheckIfFloat(float n);
+int getPositiveInt();
 
 int main() {
 
     cout << "Enter a positive integer p." << endl;
-    int p;
-    cin >> p;
-        while(p < 0)
-        {
-          cout << "Input was float or negative please try again " << endl;
-          cout << "Enter a positive integer p." << endl;
-          cin >> p;
-        }  
+    int p = getPositiveInt();
 
     cout << "Enter the nth value of the Fibbonacci Sequence you want to compute" << endl;
-    int n;
-    cin >> n;
+    int n = getPositiveInt();
 
     cout << endl << endl;
 
     cout << "Fibonacci Sequence using Equation 4: " << endl << endl;
-
-    /*for(int i = 1; i <= n; ++i){
-        cout << "Term " << i << ": " << npFibbonacci(p, i) << endl;
-    }*/
+    
     cout << npFibbonacci(p, n);
     cout << endl;
     cout << endl;
@@ -65,12 +53,12 @@ double nextTermFibonnaci(int n) {
     return nthTermFibbonacci(n) * 1.61803;
 }
 
-bool CheckIfInt(int n)
-{
-    return true;
-}
-
-bool CheckIfFloat(float n)
-{
-    return true;
+int getPositiveInt() {
+    float temp;
+    cin >> temp;
+    if(int(temp) != temp || temp < 0) {
+        cout << "Input was float or negative please try again. " <<endl;
+        return getPositiveInt();
+    }
+    return int(temp);
 }
