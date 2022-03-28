@@ -12,6 +12,10 @@ int main()
     {
         std::cout << fib_series(i) << ", ";
     }
+    std::cout << std::endl << std::endl;
+
+    std::cout << "15th term of the Fibonacci Sequence: " << std::endl;
+    std::cout << fib_series(15) << std::endl;
 
 }
 int fib_series(int n)
@@ -22,7 +26,7 @@ int fib_series(int n)
         return n;
     }
     else
-    // n-2 + n-1 = nth term
+        // n-2 + n-1 = nth term
     {
         return(fib_series(n - 2) + fib_series(n - 1));
     }
